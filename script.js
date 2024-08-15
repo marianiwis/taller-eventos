@@ -1,12 +1,20 @@
-//primera funcion para mostrar una alerta con el mensaje del boton
-function mostrarAlerta(){
-    alert("Hola!");
+// función que muestra una alerta con el mensaje del botón
+function mostrarAlerta() {
+    alert('Hola!');
 }
 
-//agora agregamos un manejador de eventos al div pai
-document.addEventListener("DOMContentLoaded", function(){    //domblablabla asegura que el codigo se ejecute despues de que el contenido del doc este full cargado
-    var div = document.querySelector(".button-container");  //selecciona el div con la clase del boton
-    div.addEventListener("click", function(){              //agrega un manejador de eventos para el click en el div que muestra una alertaush
-        alert("Hola! Soy el div");
+// agrega un manejador de eventos al div
+document.addEventListener('DOMContentLoaded', function() {
+    var div = document.querySelector('.button-container');
+    
+    div.addEventListener('click', function() { // manejador para el clic en el div
+        alert('Hola! Soy el div');
+    });
+
+    var boton = document.querySelector('button');
+    
+    boton.addEventListener('click', function(event) { // manejador para el clic en el botón
+        mostrarAlerta();
+        event.stopPropagation(); // previene que el evento click se propague al div que era el problemo
     });
 });
