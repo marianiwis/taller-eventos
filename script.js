@@ -4,14 +4,14 @@ function mostrarAlerta() {
 }
 
 // agrega un manejador de eventos al div
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
     var div = document.querySelector(".button-container");
     
     div.addEventListener("click", function() { // manejador para el clic en el div
-        alert('Hola! Soy el div');
+        alert("Hola! Soy el div");
     });
 
-    var boton = document.querySelector('button');
+    var boton = document.querySelector("button");
     
     boton.addEventListener("click", function(event) { // manejador para el clic en el botón
         mostrarAlerta();
